@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Name Reveal</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+        img {
+            width: 600px;
+            height: auto;
+            border-radius: 15px;
+        }
+        .name {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        #nina {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #kane {
+            top: 70%;
+            left: 40%;
+        }
+        #rainee {
+            top: 85%;
+            left: 40%;
+        }
+
+        /* Button styles */
+        button {
+            background: linear-gradient(145deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(145deg, #2575fc, #6a11cb);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Who is the King Kong?</h1>
+    <div class="container">
+        <img src="C:\Users\Chang Tech\Desktop\King Kong Meme\King Kong.webp" alt="Movie Scene">
+        <div id="nina" class="name">Nina</div>
+        <div id="kane" class="name">Kane</div>
+        <div id="rainee" class="name">Rainee</div>
+    </div>
+    <br>
+    <button onclick="revealName()">Reveal Name</button>
+    <button onclick="goBack()">Back</button>
+
+    <script>
+        let step = 0;
+        function revealName() {
+            const names = ["nina", "kane", "rainee"];
+            if (step < names.length) {
+                document.getElementById(names[step]).style.display = "block";
+                step++;
+            }
+        }
+
+        function goBack() {
+            const names = ["nina", "kane", "rainee"];
+            if (step > 0) {
+                step--;
+                document.getElementById(names[step]).style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
