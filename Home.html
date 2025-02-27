@@ -80,8 +80,15 @@
     <button onclick="revealName()">Reveal Name</button>
     <button onclick="goBack()">Back</button>
 
+     <!-- Sound Effects -->
+    <audio id="sound1" src="King Kong.mp3"></audio>
+    <audio id="sound2" src="Human.mp3"></audio>
+    <audio id="sound3" src="Mouse.mp3"></audio>
+
     <script>
         let step = 0;
+        const names = ["nina", "kane", "rainee"];
+        const sounds = ["sound1", "sound2", "sound3"];
         function revealName() {
             const names = ["nina", "kane", "rainee"];
             if (step < names.length) {
@@ -95,6 +102,13 @@
             if (step > 0) {
                 step--;
                 document.getElementById(names[step]).style.display = "none";
+            }
+        }
+        function playSound(soundId) {
+            const sound = document.getElementById(soundId);
+            if (sound) {
+                sound.currentTime = 0; // Reset sound to start
+                sound.play();
             }
         }
     </script>
