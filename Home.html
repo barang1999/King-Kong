@@ -106,12 +106,16 @@
         }
 
         function playSound(soundId) {
-            const sound = document.getElementById(soundId);
-            if (sound) {
-                sound.currentTime = 0; // Reset sound to start
-                sound.play();
-            }
-        }
+    const sound = document.getElementById(soundId);
+    if (sound) {
+        sound.currentTime = 0; // Reset sound to start
+        sound.play().catch(function(error) {
+            console.log("Error playing sound: " + error);
+        });
+    } else {
+        console.log("Sound not found: " + soundId);
+    }
+}
     </script>
 </body>
 </html>
