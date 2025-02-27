@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who is the KingKongl</title>
+    <title>Who is the King Kong?</title>
     <style>
         body {
             text-align: center;
@@ -80,7 +80,7 @@
     <button onclick="revealName()">Reveal Name</button>
     <button onclick="goBack()">Back</button>
 
-     <!-- Sound Effects -->
+    <!-- Sound Effects -->
     <audio id="sound1" src="Monster.mp3"></audio>
     <audio id="sound2" src="Human.mp3"></audio>
     <audio id="sound3" src="Mouse.mp3"></audio>
@@ -89,21 +89,22 @@
         let step = 0;
         const names = ["nina", "kane", "rainee"];
         const sounds = ["sound1", "sound2", "sound3"];
+
         function revealName() {
-            const names = ["nina", "kane", "rainee"];
             if (step < names.length) {
                 document.getElementById(names[step]).style.display = "block";
+                playSound(sounds[step]); // Play the corresponding sound
                 step++;
             }
         }
 
         function goBack() {
-            const names = ["nina", "kane", "rainee"];
             if (step > 0) {
                 step--;
                 document.getElementById(names[step]).style.display = "none";
             }
         }
+
         function playSound(soundId) {
             const sound = document.getElementById(soundId);
             if (sound) {
