@@ -68,7 +68,7 @@
         }
         /*Chart style*/
 
-        .iframe-container2 {
+        .iframe-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,26 +81,20 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 iframe {
     width: 100%;
+    max-width: 600px;
     height: 400px;
-    min-height: 300px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 iframe:hover {
     transform: scale(1.02); /* Subtle zoom effect on hover */
 }
      
-        .iframe-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    padding-top: 56.25%; /* Maintains 16:9 aspect ratio */
-}
 
 .responsive-iframe {
     position: absolute;
@@ -137,15 +131,19 @@ iframe:hover {
     <audio id="sound1" src="Monster.mp3"></audio>
     <audio id="sound2" src="Human.mp3"></audio>
     <audio id="sound3" src="Mouse.mp3"></audio>
-   <div class="iframe-container">
-    <iframe class="responsive-iframe" 
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRgQga_OkxN3uD0uFAAmQGDrDb3Vxq5OWAp5g9HtHGzJ1GXI6_uihx59rIJe066TYwMVS26M3xZYME_/pubchart?oid=176139552&amp;format=interactive">
-    </iframe>
-</div>
-    <div class="iframe-container2">
+     <div class="iframe-container">
+         <div class="responsive-iframe">
+        <iframe seamless frameborder="0" scrolling="no" 
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRgQga_OkxN3uD0uFAAmQGDrDb3Vxq5OWAp5g9HtHGzJ1GXI6_uihx59rIJe066TYwMVS26M3xZYME_/pubchart?oid=176139552&amp;format=interactive">  
+        </iframe>
+         </div>
+    </div>
+    <div class="iframe-container">
+        <div class="responsive-iframe">
         <iframe seamless frameborder="0" scrolling="no" 
             src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRgQga_OkxN3uD0uFAAmQGDrDb3Vxq5OWAp5g9HtHGzJ1GXI6_uihx59rIJe066TYwMVS26M3xZYME_/pubchart?oid=625264203&amp;format=interactive">  
         </iframe>
+        </div>
     </div>
 
     <script>
