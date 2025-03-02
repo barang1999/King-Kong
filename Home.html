@@ -83,6 +83,12 @@
     margin-right: auto;
     overflow: hidden; /* Prevents unwanted scrolling */
 }
+        .responsive-iframe {
+    width: 100%;
+    max-width: 600px; /* Keep original width for desktop */
+    height: auto;
+    aspect-ratio: 600 / 371; /* Maintain the aspect ratio */
+}
 
 .iframe-container iframe {
     width: 600px; /* Exact width */
