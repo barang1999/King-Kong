@@ -107,6 +107,15 @@ iframe {
 iframe:hover {
     transform: scale(1.02); /* Subtle zoom effect on hover */
 }
+        /* Ensure full width on smaller screens */
+@media (max-width: 768px) {
+    .iframe-container {
+        padding: 10px;
+    }
+    iframe {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}
 
     </style>
 </head>
