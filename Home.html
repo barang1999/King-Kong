@@ -98,15 +98,15 @@
     transform: scale(1.02); /* Subtle zoom effect on hover */
 }
 
-/* Mobile responsiveness */
+/* Ensures mobile users can view the full chart by enabling scrolling */
 @media (max-width: 768px) {
     .iframe-container {
-        max-width: 90%;
-        padding: 10px;
+        overflow-x: auto; /* Enables horizontal scrolling if needed */
+        max-width: 100%; /* Prevents clipping */
     }
 
     .iframe-container iframe {
-        height: 300px; /* Smaller height for mobile */
+        min-width: 600px; /* Prevents chart from shrinking */
     }
 }
 
